@@ -23,9 +23,9 @@ TARGET     = demo
 
 # Take a look into $(CUBE_DIR)/Drivers/BSP for available BSPs
 # name needed in upper case and lower case
-BOARD      = STM32F446ZE-Nucleo
-BOARD_UC   = STM32F4xx_Nucleo_144
-BOARD_LC   = stm32f4xx_nucleo_144
+BOARD      = NUCLEO-G474RE
+BOARD_UC   = STM32G4xx_Nucleo
+BOARD_LC   = stm32g4xx_nucleo
 BSP_BASE   = $(BOARD_LC)
 
 OCDFLAGS   = -f board/stm32f4discovery.cfg
@@ -35,22 +35,22 @@ GDBFLAGS   =
 EXAMPLE    = Examples/GPIO/GPIO_IOToggle
 
 # MCU family and type in various capitalizations o_O
-MCU_FAMILY = stm32f4xx
-MCU_LC     = stm32f446xx
-MCU_MC     = STM32F446xx
-MCU_UC     = STM32F446ZE
+MCU_FAMILY = stm32g4xx
+MCU_LC     = stm32g474xx
+MCU_MC     = STM32G474xx	# Macro for CMSIS
+MCU_UC     = STM32G474RE
 
 # path of the ld-file inside the example directories
-LDFILE     = $(EXAMPLE)/SW4STM32/$(BOARD_UC)/$(MCU_UC)Tx_FLASH.ld
+LDFILE     = $(EXAMPLE)/STM32CubeIDE/$(MCU_UC)TX_FLASH.ld
 #LDFILE     = $(EXAMPLE)/TrueSTUDIO/$(BOARD_UC)/$(MCU_UC)_FLASH.ld
 
 # Your C files from the /src directory
 SRCS       = main.c
 SRCS      += system_$(MCU_FAMILY).c
-SRCS      += stm32f4xx_it.c
+SRCS      += stm32g4xx_it.c
 
 # Basic HAL libraries
-SRCS      += stm32f4xx_hal_rcc.c stm32f4xx_hal_rcc_ex.c stm32f4xx_hal.c stm32f4xx_hal_cortex.c stm32f4xx_hal_gpio.c stm32f4xx_hal_pwr_ex.c $(BSP_BASE).c
+SRCS      += stm32g4xx_hal_rcc.c stm32g4xx_hal_rcc_ex.c stm32g4xx_hal.c stm32g4xx_hal_cortex.c stm32g4xx_hal_gpio.c stm32g4xx_hal_pwr_ex.c $(BSP_BASE).c
 
 # Directories
 OCD_DIR    = /usr/share/openocd/scripts
@@ -58,10 +58,10 @@ OCD_DIR    = /usr/share/openocd/scripts
 CUBE_DIR   = cube
 
 BSP_DIR    = $(CUBE_DIR)/Drivers/BSP/$(BOARD_UC)
-HAL_DIR    = $(CUBE_DIR)/Drivers/STM32F4xx_HAL_Driver
+HAL_DIR    = $(CUBE_DIR)/Drivers/STM32G4xx_HAL_Driver
 CMSIS_DIR  = $(CUBE_DIR)/Drivers/CMSIS
 
-DEV_DIR    = $(CMSIS_DIR)/Device/ST/STM32F4xx
+DEV_DIR    = $(CMSIS_DIR)/Device/ST/STM32G4xx
 
 CUBE_URL   = https://github.com/STMicroelectronics/STM32CubeG4/archive/refs/tags/v1.5.0.zip
 
