@@ -63,7 +63,7 @@ CMSIS_DIR  = $(CUBE_DIR)/Drivers/CMSIS
 
 DEV_DIR    = $(CMSIS_DIR)/Device/ST/STM32F4xx
 
-CUBE_URL   = http://www.st.com/st-web-ui/static/active/en/st_prod_software_internet/resource/technical/software/firmware/stm32cubef4.zip
+CUBE_URL   = https://github.com/STMicroelectronics/STM32CubeG4/archive/refs/tags/v1.5.0.zip
 
 # that's it, no need to change anything below this line!
 
