@@ -84,7 +84,7 @@ OCD        = openocd
 # Options
 
 # Defines
-DEFS       = -D$(MCU_MC) -DUSE_HAL_DRIVER
+DEFS       = -D$(MCU_MC) -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER
 
 # Debug specific definitions for semihosting
 DEFS       += -DUSE_DBPRINTF
